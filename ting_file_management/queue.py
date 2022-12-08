@@ -1,15 +1,21 @@
+from collections import deque
+
+
 class Queue:
     def __init__(self):
-        """Inicialize sua estrutura aqui"""
+        self._data = deque()
 
     def __len__(self):
-        """Aqui irá sua implementação"""
+        return len(self._data)
 
     def enqueue(self, value):
-        """Aqui irá sua implementação"""
+        self._data.append(value)
 
     def dequeue(self):
-        """Aqui irá sua implementação"""
+        return self._data.popleft()
 
     def search(self, index):
-        """Aqui irá sua implementação"""
+        length = self.__len__()
+        if index < 0 or index > length -1:
+            raise IndexError
+        return self._data[index]
