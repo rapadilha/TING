@@ -8,7 +8,8 @@ def exists_word(word, instance):
             count += 1
             if word.lower() in line.lower():
                 lines.append({'linha': count})
-    model ={
+
+    model = {
             "palavra": word,
             "arquivo": test['nome_do_arquivo'],
             "ocorrencias": lines
@@ -17,7 +18,6 @@ def exists_word(word, instance):
         return []
     finds.append(model)
     return finds
-
 
 
 def search_by_word(word, instance):
